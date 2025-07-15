@@ -9,7 +9,7 @@ export function useVcfDownload() {
     
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', 'john-doe-contact.vcf');
+    link.setAttribute('download', 'faith.vcf');
     document.body.appendChild(link);
     link.click();
     
