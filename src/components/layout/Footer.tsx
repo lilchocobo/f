@@ -27,7 +27,7 @@ export function Footer() {
                 Terms of Service
               </a>
               <a 
-                href="mailto:faith@hi.xyz" 
+                href="" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Contact
