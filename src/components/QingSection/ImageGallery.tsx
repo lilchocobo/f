@@ -3,20 +3,20 @@ import { motion } from 'framer-motion';
 
 const images = [
   {
-    url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=900&h=1200',
-    alt: 'Faith portrait'
+    url: 'https://faith.b-cdn.net/imgs/out-0-51.jpg',
+    alt: 'Faith in the afternoon '
   },
   {
-    url: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80&w=900&h=1200',
-    alt: 'Faith in nature'
+    url: 'https://faith.b-cdn.net/imgs/faithimg.png',
+    alt: 'Faith at the beach'
   },
   {
-    url: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=900&h=1200',
+    url: 'https://faith.b-cdn.net/imgs/FXXTQ77HZQWPV76D5JDDV3DZM0.png',
     alt: 'Faith smiling'
   },
   {
-    url: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=900&h=1200',
-    alt: 'Faith exploring'
+    url: 'https://faith.b-cdn.net/imgs/enhanced-image_1.jpeg',
+    alt: 'Faith at the pool'
   }
 ];
 

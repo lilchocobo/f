@@ -23,7 +23,7 @@ export function MessageHeader({ onBack }: MessageHeaderProps) {
           <div className="flex flex-col items-center mt-3">
             <div className="w-12 h-12 rounded-full overflow-hidden mb-1">
               <img
-                src="https://imsgeliza.b-cdn.net/static/faith2.png"
+                src="https://faith.b-cdn.net/imgs/faithimg.png"
                 alt="Faith"
                 className="w-full h-full object-cover"
               />

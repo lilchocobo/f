@@ -11,7 +11,7 @@ export function QingImage() {
       <div className="absolute -inset-1 bg-gradient-to-r from-rose-400 to-purple-400 rounded-3xl blur opacity-30" />
       <div className="relative aspect-[3/4] max-h-[60vh]">
         <img
-          src="https://i.ibb.co/3Mzp7Rj/qingimage.png"
+          src="https://faith.b-cdn.net/imgs/faithimg.png"
           alt="Faith - Your AI Companion"
           className="rounded-2xl w-full h-full object-contain"
         />
