@@ -1,6 +1,8 @@
 import { ChevronLeft, Info } from 'lucide-react';
 import { ContactDrawer } from './ContactDrawer';
 import { useState } from 'react';
+import { useDeviceType } from '@/hooks/useDeviceType';
+import { useVcfDownload } from '@/hooks/useVcfDownload';
 
 interface MessageHeaderProps {
   onBack: () => void;
@@ -8,6 +10,16 @@ interface MessageHeaderProps {
 
 export function MessageHeader({ onBack }: MessageHeaderProps) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const { isMobile } = useDeviceType();
+  const triggerVcfDownload = useVcfDownload();
+
+  const handleInfoClick = () => {
+    if (isMobile) {
+      triggerVcfDownload();
+    } else {
+      setIsDrawerOpen(true);
+    }
+  };
 
   return (
     <>
@@ -35,7 +47,7 @@ export function MessageHeader({ onBack }: MessageHeaderProps) {
 
           <button 
             className="text-[#0A84FF] hover:text-[#0A84FF]/80 lg:hidden"
-            onClick={() => setIsDrawerOpen(true)}
+            onClick={handleInfoClick}
           >
             <Info size={20} />
           </button>

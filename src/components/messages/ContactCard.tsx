@@ -15,9 +15,8 @@ export function ContactCard({ contact }: ContactCardProps) {
     if (isMobile) {
       triggerVcfDownload();
     } else {
-      const message = encodeURIComponent("Hey Faith! 👋");
-      const imessageUrl = `imessage://+16193978508&body=${message}`;
-      window.location.href = imessageUrl;
+      // On desktop, trigger VCF download for contact card too
+      triggerVcfDownload();
     }
   };
 
