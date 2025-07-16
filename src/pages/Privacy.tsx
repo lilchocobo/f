@@ -61,7 +61,7 @@ export function Privacy() {
           <h2>6. Contact Us</h2>
           <p>
             For any questions about this Privacy Policy, please contact us at{' '}
-            <a href="#">faith@hi.xyz</a>
+            <a href="#"></a>
           </p>
         </div>
       </div>
