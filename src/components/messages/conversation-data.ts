@@ -25,11 +25,14 @@ export const messages: Message[] = [
       alt: "A stunning golden hour sunset over the ocean with vibrant pink and purple hues reflecting on the water"
     }
   },
-    content: {
-      name: 'Faith',
-      phone: '+1 (619) 397-8508',
-      email: 'faith@hi.xyz',
-      image: 'https://faith.b-cdn.net/imgs/faithimg.png'
-    }
+  { id: generateInitialMessageId(), text: "The colors reminded me of how you described your painting! Nature really is the best artist sometimes ✨", isUser: false },
+  { id: generateInitialMessageId(), text: "Wow, that's breathtaking! The colors are so similar to what I was going for! 😍", isUser: true },
+  { id: generateInitialMessageId(), text: "Here's my contact info so you can reach me anytime! 💫", isUser: false },
+  { 
+    id: generateInitialMessageId(), 
+    text: "", 
+    isUser: false,
+    type: 'contact',
+    content: faithContact
   }
 ];

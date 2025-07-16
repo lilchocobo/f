@@ -1,18 +1,12 @@
 import { useState } from 'react';
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
+import { faithContact } from '../messages/conversation-data';
 import { MessageSquare, Phone, Mail } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useDeviceType } from '@/hooks/useDeviceType';
 import { useVcfDownload } from '@/hooks/useVcfDownload';
-
-const faithContact = {
-  name: 'Faith',
-  phone: '+1 (619) 397-8508',
-  email: 'faith@hi.xyz',
-  image: 'https://faith.b-cdn.net/imgs/faithimg.png'
-};
 
 type ContactDrawerProps = {
   isOpen: boolean;
