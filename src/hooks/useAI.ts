@@ -1,6 +1,5 @@
 import { useCallback, useRef } from 'react';
 import type { Message } from '@/components/messages/types';
-import { faithContact } from '@/components/messages/conversation-data';
 
 const API_URL = 'https://daze-production.up.railway.app/d2612687-6180-001c-9c0c-d188db86bb35/message';
 
@@ -29,7 +28,12 @@ export function useAI() {
           text: "",
           isUser: false,
           type: 'contact',
-          content: faithContact
+          content: {
+            name: 'Faith',
+            phone: '+1 (619) 397-8508',
+            email: 'faith@hi.xyz',
+            image: 'https://faith.b-cdn.net/imgs/faithimg.png'
+          }
         }
       ];
     }
