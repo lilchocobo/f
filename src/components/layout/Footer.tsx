@@ -36,7 +36,7 @@ export function Footer() {
             
             {/* Company Link */}
             <a 
-              href="https://hi.xyz" 
+              href="#" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
