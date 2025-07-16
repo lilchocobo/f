@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { MessagePreview } from './MessagePreview';
 import { EmptyStateNote } from './EmptyStateNote';
 import { useMessages } from './useMessages';
+import { ChevronDown } from 'lucide-react';
 
 interface MessagesListProps {
   searchQuery: string;
@@ -33,6 +34,22 @@ export function MessagesList({ searchQuery, onSelectConversation }: MessagesList
           <MessagePreview {...message} />
         </motion.div>
       ))}
+      
+      {/* Scroll indicator */}
+      <div className="flex justify-center py-4">
+        <motion.div
+          animate={{ y: [0, 4, 0] }}
+          transition={{ 
+            duration: 1.5, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+          className="text-muted-foreground/60"
+        >
+          <ChevronDown className="w-5 h-5" />
+        </motion.div>
+      </div>
+      
       {/* Coming soon note temporarily disabled
       <EmptyStateNote />
       */}
