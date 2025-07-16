@@ -49,47 +49,16 @@ export function ConversationProvider({ children }: { children: ReactNode }) {
   });
   const [isTyping, setIsTyping] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const sendMessage = useAI();
 
   const handleNewMessage = useCallback(async (text: string) => {
-    if (isTyping) return;
-
-    setIsLoading(true);
-    // Add user message
+    // Just add user message without API call
     const userMessage = {
       id: generateMessageId(),
       text,
       isUser: true
     };
     dispatch({ type: 'ADD_MESSAGE', message: userMessage });
-
-    // Get AI response
-    setIsTyping(true);
-    try {
-      const responses = await sendMessage(text);
-      
-      for (const response of responses) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        dispatch({
-          type: 'ADD_MESSAGE',
-          message: { ...response, id: generateMessageId() }
-        });
-      }
-    } catch (error) {
-      console.error('Failed to get AI response:', error);
-      dispatch({
-        type: 'ADD_MESSAGE',
-        message: {
-          id: generateMessageId(),
-          text: "Sorry, I couldn't process your message. Please try again.",
-          isUser: false
-        }
-      });
-    } finally {
-      setIsTyping(false);
-      setIsLoading(false);
-    }
-  }, [sendMessage, isTyping]);
+  }, []);
 
   return (
     <ConversationContext.Provider value={{ state, handleNewMessage, isTyping, isLoading }}>

@@ -11,7 +11,6 @@ export function Screen() {
     isLoading: boolean;
   }>(null);
   const [isInputDisabled, setIsInputDisabled] = useState(true);
-  const [hasAutoSent, setHasAutoSent] = useState(false);
 
   const handleSendMessage = (text: string) => {
     if (messageListRef.current) {
@@ -27,18 +26,6 @@ export function Screen() {
     const interval = setInterval(checkLoadingState, 100);
     return () => clearInterval(interval);
   }, []);
-
-  // Auto-send first message on mobile
-  useEffect(() => {
-    if (!hasAutoSent && !showMessages && messageListRef.current && !isInputDisabled) {
-      const timer = setTimeout(() => {
-        handleSendMessage("Hey Faith! How are you today? 💕");
-        setHasAutoSent(true);
-      }, 1000);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [hasAutoSent, showMessages, isInputDisabled, handleSendMessage]);
   if (showMessages) {
     return (
       <MessagesScreen 
