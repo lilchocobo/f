@@ -45,7 +45,7 @@ function conversationReducer(state: ConversationState, action: ConversationActio
 
 export function ConversationProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(conversationReducer, {
-    messages:  initialMessages.map(msg => ({ ...msg, id: generateMessageId() }))
+    messages: initialMessages.map(msg => ({ ...msg, id: generateMessageId() }))
   });
   const [isTyping, setIsTyping] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
