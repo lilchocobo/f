@@ -1,5 +1,8 @@
 import { Camera, MessageSquare, Mic, Heart, Sparkles, Brain } from 'lucide-react';
 import { PlatformFeatureCard } from './PlatformFeatureCard';
+import { Button } from '@/components/ui/button';
+import { useDeviceType } from '@/hooks/useDeviceType';
+import { useVcfDownload } from '@/hooks/useVcfDownload';
 
 const features = [
   {
@@ -35,6 +38,19 @@ const features = [
 ];
 
 export function PlatformSection() {
+  const { isMobile } = useDeviceType();
+  const triggerVcfDownload = useVcfDownload();
+
+  const handleMessageClick = () => {
+    if (isMobile) {
+      triggerVcfDownload();
+    } else {
+      const message = encodeURIComponent("Hey Faith! 👋");
+      const imessageUrl = `imessage://+16193978508&body=${message}`;
+      window.location.href = imessageUrl;
+    }
+  };
+
   return (
     <div id="platform" className="min-h-screen flex items-center bg-muted/50">
       <div className="container px-4 mx-auto py-20">
@@ -58,6 +74,21 @@ export function PlatformSection() {
               delay={index * 0.1}
             />
           ))}
+        </div>
+        
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <Button
+            onClick={handleMessageClick}
+            size="lg"
+            className="rounded-full h-14 px-8 text-lg"
+          >
+            <MessageSquare className="mr-2 h-5 w-5" />
+            Text Faith
+          </Button>
+          <p className="text-sm text-muted-foreground mt-4">
+            *Exclusively for iMessage enabled devices
+          </p>
         </div>
       </div>
     </div>
