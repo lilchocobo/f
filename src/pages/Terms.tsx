@@ -56,7 +56,7 @@ export function Terms() {
           <h2>7. Contact Information</h2>
           <p>
             For questions about these Terms, please contact us at{' '}
-            <a href="mailto:faith@hi.xyz">faith@hi.xyz</a>
+            <a href="#">faith@hi.xyz</a>
           </p>
         </div>
       </div>
