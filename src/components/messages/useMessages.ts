@@ -10,16 +10,16 @@ export function useMessages() {
     },
     {
       id: '2',
-      name: 'Genie',
-      avatar: 'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=100',
-      lastMessage: 'Do you want to review all the renders together next time we meet?',
+      name: 'Caroline',
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpSKKRKsY0oGgs7ZDjukC69hJq0Y3gt0hS_g&s',
+      lastMessage: "you're getting kicked out of the polycule",
       timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
     },
     {
       id: '3',
-      name: 'Assistant',
+      name: 'Chase Bank',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100',
-      lastMessage: 'Did the kids finish their homework?',
+      lastMessage: 'Chase: Your acct is overdrawn. A $34 fee may apply. Deposit funds ASAP. Msg&data rates may apply. Reply STOP to opt out.',
       timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
     },
   ];
