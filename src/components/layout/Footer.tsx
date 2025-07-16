@@ -14,24 +14,6 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             {/* Footer Links */}
             <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6">
-              <a 
-                href="/privacy" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a 
-                href="/terms" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Terms of Service
-              </a>
-              <a 
-                href="#" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Contact
-              </a>
             </div>
             
             {/* Company Link */}
