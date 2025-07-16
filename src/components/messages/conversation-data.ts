@@ -25,7 +25,6 @@ export const messages: Message[] = [
       alt: "A stunning golden hour sunset over the ocean with vibrant pink and purple hues reflecting on the water"
     }
   },
-  {
     content: {
       name: 'Faith',
       phone: '+1 (619) 397-8508',
