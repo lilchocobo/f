@@ -5,6 +5,8 @@ import { MessageSquare, Phone, Mail } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from 'framer-motion';
+import { useDeviceType } from '@/hooks/useDeviceType';
+import { useVcfDownload } from '@/hooks/useVcfDownload';
 
 type ContactDrawerProps = {
   isOpen: boolean;
@@ -15,6 +17,9 @@ const quickActions = [
   { 
     icon: MessageSquare, 
     label: 'Message',
+    onClick: () => {}
+  },
+  { 
     onClick: () => {
       const message = encodeURIComponent("Hey Faith! 👋");
       const imessageUrl = `imessage://+16193978508&body=${message}`;
@@ -29,12 +34,39 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
   const [showEmailInput, setShowEmailInput] = useState(false);
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { isMobile } = useDeviceType();
+  const triggerVcfDownload = useVcfDownload();
+
+  const handleMessageClick = () => {
+    if (isMobile) {
+      triggerVcfDownload();
+    } else {
+      const message = encodeURIComponent("Hey Faith! 👋");
+      const imessageUrl = `imessage://+16193978508&body=${message}`;
+      window.location.href = imessageUrl;
+    }
+  };
 
   const handleAddToContacts = () => {
-    const message = encodeURIComponent("Hey Faith! 👋");
-    const imessageUrl = `imessage://+16193978508&body=${message}`;
-    window.location.href = imessageUrl;
+    if (isMobile) {
+      triggerVcfDownload();
+    } else {
+      const message = encodeURIComponent("Hey Faith! 👋");
+      const imessageUrl = `imessage://+16193978508&body=${message}`;
+      window.location.href = imessageUrl;
+    }
   };
+
+  // Update the quickActions to use the new handler
+  const updatedQuickActions = [
+    { 
+      icon: MessageSquare, 
+      label: 'Message',
+      onClick: handleMessageClick
+    },
+    { icon: Phone, label: 'Call', onClick: () => {} },
+    { icon: Mail, label: 'Mail', onClick: () => {} }
+  ];
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
@@ -60,7 +92,7 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
 
           {/* Quick Actions */}
           <div className="grid grid-cols-3 gap-4 px-4 py-6 bg-background">
-            {quickActions.map((action) => (
+            {updatedQuickActions.map((action) => (
               <button
                 key={action.label}
                 onClick={action.onClick}

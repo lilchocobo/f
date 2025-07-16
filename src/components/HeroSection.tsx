@@ -3,12 +3,21 @@ import { Button } from '@/components/ui/button';
 import { MessageSquare } from 'lucide-react';
 import { FloatingPhone } from './phone/FloatingPhone';
 import { MobilePhone } from './phone/MobilePhone';
+import { useDeviceType } from '@/hooks/useDeviceType';
+import { useVcfDownload } from '@/hooks/useVcfDownload';
 
 export function HeroSection() {
+  const { isMobile } = useDeviceType();
+  const triggerVcfDownload = useVcfDownload();
+
   const handleMessageClick = () => {
-    const message = encodeURIComponent("Hey Faith! 👋");
-    const imessageUrl = `imessage://+16193978508&body=${message}`;
-    window.location.href = imessageUrl;
+    if (isMobile) {
+      triggerVcfDownload();
+    } else {
+      const message = encodeURIComponent("Hey Faith! 👋");
+      const imessageUrl = `imessage://+16193978508&body=${message}`;
+      window.location.href = imessageUrl;
+    }
   };
 
   return (

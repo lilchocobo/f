@@ -1,15 +1,24 @@
 import { ChevronRight } from 'lucide-react';
 import { ContactInfo } from '../messages/types';
+import { useDeviceType } from '@/hooks/useDeviceType';
+import { useVcfDownload } from '@/hooks/useVcfDownload';
 
 type ContactCardProps = {
   contact: ContactInfo;
 };
 
 export function ContactCard({ contact }: ContactCardProps) {
+  const { isMobile } = useDeviceType();
+  const triggerVcfDownload = useVcfDownload();
+
   const handleClick = () => {
-    const message = encodeURIComponent("Hey Faith! 👋");
-    const imessageUrl = `imessage://+16193978508&body=${message}`;
-    window.location.href = imessageUrl;
+    if (isMobile) {
+      triggerVcfDownload();
+    } else {
+      const message = encodeURIComponent("Hey Faith! 👋");
+      const imessageUrl = `imessage://+16193978508&body=${message}`;
+      window.location.href = imessageUrl;
+    }
   };
 
   return (
