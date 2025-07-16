@@ -44,21 +44,21 @@ export const MessageList = forwardRef<
             </motion.div>
           )}
         </AnimatePresence>
-        
-        {/* Scroll indicator */}
-        <div className="flex justify-center py-4">
-          <motion.div
-            animate={{ y: [0, 4, 0] }}
-            transition={{ 
-              duration: 1.5, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
-            className="text-muted-foreground/60"
-          >
-            <ChevronDown className="w-5 h-5" />
-          </motion.div>
-        </div>
+      </div>
+      
+      {/* Fixed scroll indicator at bottom of screen */}
+      <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-10">
+        <motion.div
+          animate={{ y: [0, 4, 0] }}
+          transition={{ 
+            duration: 1.5, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+          className="text-muted-foreground/60"
+        >
+          <ChevronDown className="w-5 h-5" />
+        </motion.div>
       </div>
     </div>
   );
