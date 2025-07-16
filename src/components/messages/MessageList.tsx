@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { forwardRef, useImperativeHandle } from 'react';
+import { ChevronDown } from 'lucide-react';
 import { MessageBubble } from './MessageBubble';
 import { useMessageScroll } from '@/hooks/useMessageScroll';
 import { TypingIndicator } from './TypingIndicator';
@@ -43,6 +44,21 @@ export const MessageList = forwardRef<
             </motion.div>
           )}
         </AnimatePresence>
+        
+        {/* Scroll indicator */}
+        <div className="flex justify-center py-4">
+          <motion.div
+            animate={{ y: [0, 4, 0] }}
+            transition={{ 
+              duration: 1.5, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+            className="text-muted-foreground/60"
+          >
+            <ChevronDown className="w-5 h-5" />
+          </motion.div>
+        </div>
       </div>
     </div>
   );
