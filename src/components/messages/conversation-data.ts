@@ -1,6 +1,10 @@
 import { Message } from './types';
 
-
+export const faithContact = {
+  name: 'Faith',
+  phone: '+1 (619) 397-8508',
+  image: 'https://faith.b-cdn.net/imgs/faithimg.png'
+};
 
 let initialMessageId = 0;
 const generateInitialMessageId = () => {
