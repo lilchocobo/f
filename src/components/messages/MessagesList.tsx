@@ -35,8 +35,12 @@ export function MessagesList({ searchQuery, onSelectConversation }: MessagesList
         </motion.div>
       ))}
       
-      {/* Scroll indicator */}
-      <div className="flex justify-center py-4">
+      {/* Coming soon note temporarily disabled
+      <EmptyStateNote />
+      */}
+      
+      {/* Scroll indicator at bottom */}
+      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <motion.div
           animate={{ y: [0, 4, 0] }}
           transition={{ 
@@ -49,10 +53,6 @@ export function MessagesList({ searchQuery, onSelectConversation }: MessagesList
           <ChevronDown className="w-5 h-5" />
         </motion.div>
       </div>
-      
-      {/* Coming soon note temporarily disabled
-      <EmptyStateNote />
-      */}
     </div>
   );
 }
