@@ -1,11 +1,6 @@
 import { Message } from './types';
 
-export const faithContact = {
-  name: 'Faith',
-  phone: '+1 (619) 397-8508',
-  email: 'faith@hi.xyz',
-  image: 'https://imsgeliza.b-cdn.net/static/faith2.png'
-};
+
 
 let initialMessageId = 0;
 const generateInitialMessageId = () => {
