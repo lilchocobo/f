@@ -18,7 +18,7 @@ export function useMessages() {
     {
       id: '3',
       name: 'Chase Bank',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100',
+      avatar: 'https://1000logos.net/wp-content/uploads/2016/11/Shape-of-the-Chase-logo-500x311.jpg',
       lastMessage: 'Chase: Your acct is overdrawn. A $34 fee may apply. Deposit funds ASAP. Msg&data rates may apply. Reply STOP to opt out.',
       timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
     },
