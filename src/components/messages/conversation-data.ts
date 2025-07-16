@@ -3,7 +3,6 @@ import { Message } from './types';
 export const faithContact = {
   name: 'Faith',
   phone: '+1 (619) 397-8508',
-  email: 'faith@hi.xyz',
   image: 'https://faith.b-cdn.net/imgs/faithimg.png'
 };
 
