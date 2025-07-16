@@ -22,21 +22,6 @@ export function Screen() {
     return () => clearInterval(interval);
   }, []);
 
-  // Auto-send first message on mobile
-  useEffect(() => {
-    if (!hasAutoSent && messageListRef.current && !messageListRef.current.isLoading) {
-      const timer = setTimeout(() => {
-        messageListRef.current?.addMessage("Hey Faith! How are you today? 💕");
-        setHasAutoSent(true);
-      }, 1000); // Wait 1 second after loading
-      
-      return () => clearTimeout(timer);
-    }
-  }, [hasAutoSent, messageListRef.current?.isLoading]);
-  const handleSendMessage = (message: string) => {
-    messageListRef.current?.addMessage(message);
-  };
-
   if (showMessages) {
     return (
       <MessagesScreen 
